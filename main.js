@@ -6,67 +6,67 @@ const textoResultado = document.querySelector('.texto-resultado');
 
 const perguntas = [
     {
-        enunciado: "Carlos é um estudantede pele  negra do ensino medio isso faz ele sofrer ameaças como Carlos deveria agir com a situação",
+        enunciado: "Silvio Santos está planejando um novo programa de televisão. Como ele deve abordar o formato do programa?",
         alternativas: [
             {
-                texto:"chamar os monitores e resolver de forma pacífica",
-                afirmacao: "O garoto levou a mãe na escola e os pais dos alunos forão chamados tudo foi resolvido com uma suspenção"
+                texto: "Criar um formato inovador e interativo com participação do público",
+                afirmacao: "Silvio decidiu por um programa interativo, que envolvia o público em tempo real e foi um grande sucesso."
             },
             {
-                texto:"levar armas e causar um grande conflito",
-                afirmacao: "resultado 02"
+                texto: "Seguir um formato tradicional com entrevistas e convidados",
+                afirmacao: "O formato tradicional foi mantido, mas o programa teve uma recepção morna por não oferecer novidades."
             }   
         ]
     },
     {
-        enunciado: "Enunciado 02",
+        enunciado: "Qual deve ser o foco principal do novo programa?",
         alternativas: [
             {
-                texto: "alternativa 03",
-                afirmacao: "resultado03"
+                texto: "Entretenimento e diversão para todas as idades",
+                afirmacao: "O foco no entretenimento trouxe um público diversificado e o programa se tornou um sucesso."
             },
             {
-                texto: "alternativa 04",
-                afirmacao: "resultado 04"
+                texto: "Discussões sérias e debates sobre temas atuais",
+                afirmacao: "O foco em debates não atraiu a audiência esperada e o programa teve uma recepção modesta."
             }
         ]
     },
     {
-        enunciado: "Enunciado 03",
+        enunciado: "Como Silvio deve promover o novo programa para atrair mais audiência?",
         alternativas: [
             {
-                texto: "alternativa 05",
-                afirmacao: "resultado 05"
+                texto: "Usar campanhas publicitárias em redes sociais e TV",
+                afirmacao: "A estratégia de marketing nas redes sociais e na TV trouxe um grande aumento na audiência."
             },
             {
-                texto: "alternativa 06",
-                afirmacao: "resultado 06"
+                texto: "Apostar em promoções e sorteios com grandes prêmios",
+                afirmacao: "Os sorteios foram um sucesso inicial, mas a audiência diminuiu após a promoção."
             }
         ]
     },
     {
-        enunciado: "Enunciado 04",
+        enunciado: "Qual deve ser a abordagem para os convidados do programa?",
         alternativas: [
             {
-                texto: "alternativa 07",
-                afirmacao: "resultado 07"
+                texto: "Convidar personalidades famosas e influentes",
+                afirmacao: "Convidar personalidades famosas atraiu grandes audiências e aumentou a popularidade do programa."
             },
             {
-                texto: "alternativa 08",
-                afirmacao: "resultado 08"
+                texto: "Convidar pessoas comuns com histórias inspiradoras",
+                afirmacao: "As histórias inspiradoras foram bem recebidas, mas não atraíram tantas pessoas quanto esperado."
             }
         ]
     },
     {
-        enunciado: "Enunciado 05",
+        enunciado: "Como Silvio pode garantir que o programa continue relevante ao longo do tempo?",
         alternativas: [
             {
-                texto: "alternativa 09",
-                afirmacao: "resultado 09"
+                texto: "Fazer constantes atualizações e ajustes baseados no feedback do público",
+                afirmacao: "A adaptação contínua com base no feedback garantiu que o programa permanecesse relevante e popular."
             },
             {
-                texto: "alternativa 10",
-                afirmacao: "resultado 10"
+                texto: "Manter o mesmo formato e estilo sem mudanças",
+                afirmacao: "A falta de inovação levou a uma queda gradual na audiência ao longo do tempo."
             }
         ]
     },
@@ -79,11 +79,11 @@ let historiaFinal = "";
 function mostrarPerguntas(){
     if(atual >= perguntas.length){
         mostraResultado();
-        return
+        return;
     }
     perguntaAtual = perguntas[atual];
     caixaPerguntas.textContent = perguntaAtual.enunciado;
-    caixaAlternativas.textContent = ""
+    caixaAlternativas.textContent = "";
     mostrarAlternativas();
 }
 
@@ -91,7 +91,7 @@ function mostrarAlternativas(){
     for(const alternativa of perguntaAtual.alternativas){
         const botaoAlternativas = document.createElement("button");
         botaoAlternativas.textContent = alternativa.texto;
-        botaoAlternativas.addEventListener("click", () => respostaSelecionada(alternativa))
+        botaoAlternativas.addEventListener("click", () => respostaSelecionada(alternativa));
         caixaAlternativas.appendChild(botaoAlternativas);
     }
 }
@@ -104,7 +104,7 @@ function respostaSelecionada(opcaoSelecionada){
 }
 
 function mostraResultado(){
-    caixaPerguntas.textContent = " Inicio do texto... "
+    caixaPerguntas.textContent = "O novo programa de Silvio Santos foi um sucesso devido às escolhas acertadas feitas durante o planejamento e promoção. Aqui está o resumo das decisões que levaram ao sucesso:";
     textoResultado.textContent = historiaFinal;
     caixaAlternativas.textContent = "";
 }
